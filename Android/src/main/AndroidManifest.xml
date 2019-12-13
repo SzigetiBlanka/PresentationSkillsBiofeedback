@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.aut.presentationskills" xmlns:tools="http://schemas.android.com/tools" android:installLocation="preferExternal">
+  <!-- MQTT -->
+  <uses-permission android:name="android.permission.BLUETOOTH" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <!--Emotiv-->
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+  <!--VR-->
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+  <supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true" android:anyDensity="true" />
+  <application android:name=".PresentationSkillsVRandAndroid" android:theme="@style/VrActivityTheme"
+      android:icon="@mipmap/app_icon" android:label="@string/app_name"
+      android:supportsRtl="true"
+      tools:replace="android:icon,android:theme,android:allowBackup"
+      android:allowBackup="false"
+      tools:ignore="GoogleAppIndexingWarning">
+    <activity android:name=".ui.signin.SignInActivity"  android:theme="@style/AppTheme">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:name=".ui.measurement.MeasurementActivity"  android:theme="@style/AppTheme">
+    </activity>
+
+    <activity android:label="@string/app_name" android:screenOrientation="landscape"
+        android:launchMode="singleTask" android:theme="@style/VrActivityTheme"
+        android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+        android:hardwareAccelerated="false" android:enableVrMode="@string/gvr_vr_mode_component"
+        android:resizeableActivity="false"
+        android:name="com.aut.presentationskills.ui.Unity.UnityMainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+        <category android:name="com.google.intent.category.DAYDREAM" />
+        <!--<data android:mimeType="text/plain"/>-->
+      </intent-filter>
+      <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+      <meta-data android:name="com.google.android.vr.icon" android:resource="@drawable/vr_icon_front" />
+      <meta-data android:name="com.google.android.vr.icon_background" android:resource="@drawable/vr_icon_back" />
+    </activity>
+
+    <activity
+        android:name=".emotiv.util.RequestPermissionActivity"
+        android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+    <activity
+        android:name="emotiv.util.ResultActivity"
+        android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+    <activity android:name=".MainActivity" />
+
+    <service android:name="org.eclipse.paho.android.service.MqttService" />
+
+    <meta-data
+        android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
+    <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="true" />
+    <meta-data android:name="unity.build-id" android:value="ba594ece-2e33-4a8a-aecc-a8ede2908c11" />
+    <meta-data android:name="unity.splash-mode" android:value="0" />
+    <meta-data android:name="unity.splash-enable" android:value="False" />
+  </application>
+  <uses-feature android:glEsVersion="0x00020000" />
+  <uses-feature android:name="android.hardware.vr.headtracking" android:required="false" android:version="1" />
+  <uses-feature android:name="android.software.vr.mode" />
+  <uses-feature android:name="android.hardware.vr.high_performance" />
+  <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+  <uses-feature android:name="android.hardware.touchscreen.multitouch" android:required="false" />
+  <uses-feature android:name="android.hardware.touchscreen.multitouch.distinct" android:required="false" />
+</manifest>

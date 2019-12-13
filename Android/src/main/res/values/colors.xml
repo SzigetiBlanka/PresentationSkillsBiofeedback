@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#576b7f</color>
+    <color name="colorPrimaryDark">#3C4C58</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorgrey">#c4cac7</color>
+    <color name="background">#ECEFE6</color>
+    <color name="disconnectedSensor">#691212</color>
+    <color name="connectedSensor">#2F5522</color>
+</resources>

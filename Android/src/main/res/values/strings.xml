@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="game_view_content_description">Game view</string>
+  <string name="app_name">PresentationSkills</string>
+  <string name="description">Description:</string>
+  <string name="gvr_vr_mode_component">gvr_vr_mode_component</string>
+  <string name="start">START</string>
+  <string name="emotiv_insight">Emotiv Insight</string>
+  <string name="measurement_name">Measurement name</string>
+  <string name="measuement_name">Measuement name:</string>
+  <string name="description_of_measurement">description of measurement</string>
+  <string name="connected">Connected</string>
+  <string name="disconnected">Disconnected</string>
+  <string name="sign_in">SIGN IN</string>
+  <string name="try_again">Try Again</string>
+  <string name="status">status:</string>
+  <string name="login">Login</string>
+  <string name="sign_out">Sign out</string>
+  <string name="please_sign_in_with_google">Please sign in with Google</string>
+</resources>
